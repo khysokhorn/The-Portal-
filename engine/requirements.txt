@@ -1,0 +1,10 @@
+# Core Audio Processing
+librosa
+soundfile
+numpy
+
+# Video & Audio Downloading
+yt-dlp
+
+# Transcription (Optional but recommended for the guide)
+# openai-whisper
