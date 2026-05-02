@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  claude-proxy:
+    build: .
+    container_name: claude-proxy
+    ports:
+      - "4000:4000"
+    environment:
+      - LOCAL_SERVER_URL=http://host.docker.internal:8045/v1/chat/completions
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
