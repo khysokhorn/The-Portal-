@@ -6,9 +6,15 @@ import json
 app = FastAPI()
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 # Your local OpenAI-compatible server (can be overridden by environment variable)
 LOCAL_SERVER_URL = os.getenv("LOCAL_SERVER_URL", "http://host.docker.internal:8045/v1/chat/completions")
+LOCAL_API_KEY = os.getenv("LOCAL_API_KEY", "sk-local-key")
+
 
 
 @app.get("/v1/models")
@@ -56,7 +62,8 @@ async def proxy_anthropic_to_openai(request: Request):
             auth_header = auth_header.replace("sk-ant-api03-", "")
         
         if not auth_header:
-            auth_header = "Bearer sk-50c3d8d9d6884dafa9b1e17ebff450d7" # Fallback to your real key
+            auth_header = f"Bearer {LOCAL_API_KEY}" # Use the key from .env
+
 
         async with httpx.AsyncClient() as client:
             response = await client.post(

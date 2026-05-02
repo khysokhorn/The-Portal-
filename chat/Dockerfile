@@ -3,7 +3,8 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Install dependencies
-RUN pip install --no-cache-dir fastapi uvicorn httpx
+RUN pip install --no-cache-dir fastapi uvicorn httpx python-dotenv
+
 
 # Copy the proxy script
 COPY claude_proxy.py .

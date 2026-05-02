@@ -1,28 +1,19 @@
-# Python
+.env
 __pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-ENV/
-env/
-
-# OS-specific
+*.pyc
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+chat/.env
+node_modules/
+.venv/
+dist/
+build/
+*.wav
+*.srt
+*.mp3
+*.mp4
+*.webm
+*.vtt
 
-references/
+training_set/
 data/
-
-
-# Temp & Analysis
-*.json
-*.log
-*.tmp
-engine/__pycache__/
-.gemini/
+output/
