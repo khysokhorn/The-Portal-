@@ -11,4 +11,7 @@ services:
     extra_hosts:
 
       - "host.docker.internal:host-gateway"
+    volumes:
+      - /Users/sokhorn/.antigravity_tools:/root/.antigravity_tools
+      - /Users/sokhorn/Library/Application Support/Antigravity:/root/DesktopAppSupport/Antigravity
     restart: unless-stopped
