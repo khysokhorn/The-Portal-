@@ -5,7 +5,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Antigravity Manager",
       "options": {
-        "baseURL": "http://127.0.0.1:8045/v1",
+        "baseURL": "http://127.0.0.1:4000/v1",
         "apiKey": "sk-50c3d8d9d6884dafa9b1e17ebff450d7"
       },
       "models": {

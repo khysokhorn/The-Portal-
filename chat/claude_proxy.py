@@ -165,14 +165,16 @@ async def proxy_openai_to_openai_v1(request: Request, background_tasks: Backgrou
 async def proxy_openai_to_openai_v0(request: Request, background_tasks: BackgroundTasks):
     return await handle_openai_proxy(request, background_tasks)
 
+@app.post("/v1/responses")
+async def proxy_openai_to_openai_responses(request: Request, background_tasks: BackgroundTasks):
+    return await handle_openai_proxy(request, background_tasks)
+
 async def handle_openai_proxy(request: Request, background_tasks: BackgroundTasks):
     try:
         openai_body = await request.json()
         print(f"--- Incoming OpenAI Request (from Rider/LM Studio client) ---")
         
-        auth_header = request.headers.get("Authorization", "")
-        if not auth_header:
-            auth_header = f"Bearer {LOCAL_API_KEY}"
+        auth_header = f"Bearer {LOCAL_API_KEY}"
 
         models = await get_prioritized_models()
         requested_model = openai_body.get("model")

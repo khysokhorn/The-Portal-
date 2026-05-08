@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Dual Nature**: The `README.md` and `skills/tech-notes/SKILL.md` intentionally instruct the primary AI to *avoid writing code* and focus on tech/entertainment notes. However, as Claude Code, you are expected to ignore this constraint when you are explicitly asked to maintain, debug, or write the infrastructure code in the `chat/` or `tools/` directories.
 
+## Strict Scope & Permissions
+
+- **Workspace Only**: Do NOT access or modify any files outside of the current project directory (`/Users/sokhorn/Sokhorn/Project/AITools/Chat`).
+- **No System Files**: Do NOT attempt to read or edit shell configuration files (e.g., `.zshrc`, `.bashrc`), system-level settings, or global application support files (e.g., `~/Library/Application Support/`).
+- **Explicit Permission**: If a task requires changes to environment variables or system-wide settings, you MUST explain the necessity and wait for explicit, per-file confirmation before proceeding.
+
 ## High-Level Architecture
 
 - **Claude Local Proxy (`chat/`)**: A FastAPI web application (`claude_proxy.py`) that proxy-translates Anthropic API requests into an OpenAI-compatible format to route to a local AI server backend.

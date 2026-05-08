@@ -38,4 +38,4 @@ To use the official Claude CLI with your local models:
 
 - `LOCAL_API_KEY`: `sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
-- `LOCAL_SERVER_URL`: `http://127.0.0.1:8045/v1/chat/completions`
+- `LOCAL_SERVER_URL`: `http://127.0.0.1:4000/v1/chat/completions`
